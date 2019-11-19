@@ -2,8 +2,11 @@
 
 namespace BlackJackGame_Studeren
 {
-    class Program
+    public class Program
     {
-      
+        public static void Main(string[] args)
+        {
+
+        }
     }
 }

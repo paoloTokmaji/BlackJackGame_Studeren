@@ -1,31 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BlackJackGame_Studeren.Models
 {
     public class Deck
     {
-        private IList<BlackJackCard> _cards;
+        protected IList<BlackJackCard> _cards;
         private static readonly Random _random = new Random();
 
         public Deck()
         {
             _cards = new List<BlackJackCard>();
-           
-            foreach(Suit s in Enum.GetValues(typeof(Suit)))
+
+            foreach (Suit s in Enum.GetValues(typeof(Suit)))
             {
-                foreach (FaceValue f in Enum.GetValues(typeof(FaceValue))){
+                foreach (FaceValue f in Enum.GetValues(typeof(FaceValue)))
+                {
                     _cards.Add(new BlackJackCard(s, f));
                 }
-               
+
             }
         }
 
 
         public BlackJackCard Draw()
         {
-           if(_cards.Count == 0)
+            if (_cards.Count == 0)
             {
                 throw new InvalidOperationException("Deck is empty!");
             }
